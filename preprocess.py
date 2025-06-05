@@ -18,7 +18,7 @@ dataset = 'sample_train-item-views.csv'
 if opt.dataset == 'diginetica':
     dataset = 'train-item-views.csv'
 elif opt.dataset == 'yoochoose':
-    dataset = '/kaggle/input/recsys-challenge-2015/yoochoose-clicks.dat'
+    dataset = '/root/yoochoose-clicks.dat'
 
 print("-- Starting @ %ss" % datetime.datetime.now())
 
