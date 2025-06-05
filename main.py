@@ -15,7 +15,7 @@ def init_seed(seed=None):
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--dataset', default='diginetica', help='diginetica/Nowplaying/Tmall')
+parser.add_argument('--dataset', default='yoochoose1_64', help='yoochoose1_64/diginetica/Nowplaying/Tmall')
 parser.add_argument('--hiddenSize', type=int, default=100)
 parser.add_argument('--epoch', type=int, default=20)
 parser.add_argument('--activate', type=str, default='relu')
@@ -56,6 +56,12 @@ def main():
         opt.n_iter = 1
         opt.dropout_gcn = 0.6
         opt.dropout_local = 0.5
+    elif opt.dataset == 'yoochoose1_64':
+        # !!! توجه: این مقدار را با عدد دقیقی که از دیتاست خودتان استخراج کرده‌اید، جایگزین کنید
+        num_node = 37484  # مثال: این عدد باید جایگزین شود
+        opt.n_iter = 2
+        opt.dropout_gcn = 0.2
+        opt.dropout_local = 0.0
     else:
         num_node = 310
 
